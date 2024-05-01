@@ -9,11 +9,11 @@ namespace Catalog.UI.Controllers.CatalogControllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CatalogsController : ControllerBase
+    public class CatalogController : ControllerBase
     {
         private readonly IMediator _mediator;
 
-        public CatalogsController(ICatalogDbContext context, IMediator mediator)
+        public CatalogController(IMediator mediator)
         {
             _mediator = mediator;
         }

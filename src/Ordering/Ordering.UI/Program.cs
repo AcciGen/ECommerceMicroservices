@@ -1,3 +1,5 @@
+using Ordering.Application;
+using Ordering.Infrastructure;
 
 namespace Ordering.UI
 {
@@ -8,6 +10,8 @@ namespace Ordering.UI
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            builder.Services.AddOrderingApplicationDependencyInjection();
+            builder.Services.AddOrderingInfrastructureDependencyInjection(builder.Configuration);
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

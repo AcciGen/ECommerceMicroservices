@@ -1,4 +1,7 @@
 
+using Discount.Application;
+using Discount.Infrastructure;
+
 namespace Discount.UI
 {
     public class Program
@@ -8,6 +11,9 @@ namespace Discount.UI
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            builder.Services.AddDiscountApplicationDependencyInjection();
+            builder.Services.AddDiscountInfrastructureDependencyInjection(builder.Configuration);
+
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
